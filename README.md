@@ -1,1 +1,1 @@
-# TI-IoT-SC
+# Capstone Project
