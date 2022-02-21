@@ -10,10 +10,12 @@ Development Milestones
   - Push requests to the backend 
 
 # Back-end v0.3 
+  - Use Django
   - Pull requests from the front-end 
   - Store data from fakeMCU into MySQL DB 
   - When data is requested from front-end, send data 
 # fakeMCU 
+  - Simple HTML/CSS
   - Window to simulate an MCU 
   - Only has a text field and submit button 
   - Submits to back-end
