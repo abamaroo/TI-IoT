@@ -15,7 +15,7 @@ import '../assets/css/App.css'
 
 function Header(){
     {/* pages: buttons to clock on*/}
-  const pages = ['About', 'Contact', 'Blog'];
+  const pages = ['About', 'Contact', 'Docemntation'];
     {/* settings: options when you click on image*/}
   const settings = ['Profile', 'Logout']
 
@@ -63,6 +63,22 @@ function Header(){
                             {page}
                         </Button>
                         ))}
+                    </Box>
+
+                    <Box 
+                    sx={{ flexGrow: 0, 
+                    display: { xs: 'none', md: 'flex' }, 
+                    '&:hover': { 
+                        backgroundColor: 'primary.main',
+                        opacity: [0.9, 0.8, 0.7],
+                        },
+                        } }> 
+                        <Button
+                            onClick={handleCloseNavMenu}
+                            sx={{ my: 2, color: 'white', display: 'block' }}
+                        >
+                            Dashboard
+                        </Button>
                     </Box>
 
                     <Box sx={{ flexGrow: 0 }}>

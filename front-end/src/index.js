@@ -11,9 +11,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 
 ReactDOM.render(
-    <BrowserRouter> 
-      <LandingPage />
-    </BrowserRouter>,
+  <React.StrictMode>
+        <LandingPage />
+    </React.StrictMode>,
   document.getElementById('root')
 );
 
