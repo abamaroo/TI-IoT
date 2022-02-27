@@ -40,7 +40,7 @@ function Header(){
     return(
         <> 
         {console.log('header is here')}
-        <AppBar className='header' position= 'sticky' color ='secondary'> 
+        <AppBar className='header' position= 'sticky' style ={{background: '#cc0000'}}> 
             <Container>
                 <Toolbar>
                     <Typography
