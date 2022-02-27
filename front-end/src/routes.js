@@ -10,14 +10,14 @@ const dashboardRoutes = [
     },
     {
       path: "/Devices",
-      name: "Notifications",
+      name: "Devices",
       icon: "nc-icon nc-bell-55",
       component: 'sss',
       layout: "/admin",
     },
     {
       path: "/Something else",
-      name: "User Profile",
+      name: "Something ? ",
       icon: "nc-icon nc-circle-09",
       component:'sss',
       layout: "/admin",

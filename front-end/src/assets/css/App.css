@@ -1,10 +1,18 @@
-.App {
-  text-align: center;
+
+.dashboard-container {
+ 
 }
 
+.dashboard-container .dashboard-content {
+  position: fixed;
+  background-color: #1500ff;
+  left:400px
+}
 
-.App .side-bar {
-  position: absolute;
-  left: 20px
+.side-bar {
+  position: fixed;
+  background-color: #f6acdb;
+  display: inline-block;
+  height: 100vh;
   
 }

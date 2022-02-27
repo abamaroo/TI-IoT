@@ -1,5 +1,7 @@
 import React from 'react'
 import Nav from "react-bootstrap/Nav";
+import Grid from '@mui/material/Grid';
+import Button from '@mui/material/Button'
 import { useLocation, NavLink } from "react-router-dom";
 import dashboardRoutes from '../routes.js'
 
@@ -24,29 +26,34 @@ function Sidebar({ color, image}) {
             <p> LOGO </p>
 
         </div>
-
-        <Nav>
-          {
-            dashboardRoutes.map((prop, key) => {
-                return (
-                  <li
-                  className={ activeRoute(prop.layout + prop.path)}
-                  key={key}
-                >
-                  <NavLink
-                    to={prop.layout + prop.path}
-                    className="nav-link"
-                    activeclassname="active"
+          <Nav>
+            {
+              dashboardRoutes.map((prop, key) => {
+                  return (
+                    <Grid
+                    container
+                    direction="column"
+                    justifyContent="space-between"
+                    alignItems="flex-start"
+                    key={key}
                   >
-                    <i className={prop.icon} />
-                    <p>{prop.name}</p>
-                  </NavLink>
-                  </li>
-                );
-            })
-          }
-        </Nav>
-
+                    <li
+                    className={ activeRoute(prop.layout + prop.path)}
+                  >
+                      <NavLink
+                        to={prop.layout + prop.path}
+                        className="nav-link"
+                        activeclassname="active"
+                      >
+                        <i className={prop.icon} />
+                        <p>{prop.name}</p>
+                      </NavLink>
+                    </li>
+                    </Grid>
+                  );
+              })
+            }
+          </Nav>
       </div>
 
   </div>

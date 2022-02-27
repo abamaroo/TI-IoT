@@ -1,13 +1,20 @@
 import React from "react";
 import Sidebar from "../components/SideBar";
 
+
 function Dashboard() {
 
   return (
-    <>
-        <h1> I am dashboard </h1>
-        <Sidebar />
-    </>
+    <div className="dashboard-container">
+        <div className="dashboard-sidebar"> 
+            <Sidebar />
+        </div>
+
+        <div className="dashboard-content"> 
+            <h1> I am dashboard </h1>
+        </div>
+        
+    </div>
   );
 }
 
