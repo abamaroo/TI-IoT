@@ -1,0 +1,9 @@
+.App {
+  text-align: center;
+}
+
+.App .side-bar {
+  position: absolute;
+  left: 20px
+  
+}
