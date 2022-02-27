@@ -9,17 +9,17 @@ const dashboardRoutes = [
       layout: "/admin",
     },
     {
-      path: "/user",
-      name: "User Profile",
-      icon: "nc-icon nc-circle-09",
-
+      path: "/Devices",
+      name: "Notifications",
+      icon: "nc-icon nc-bell-55",
+      component: 'sss',
       layout: "/admin",
     },
     {
-      path: "/notifications",
-      name: "Notifications",
-      icon: "nc-icon nc-bell-55",
-
+      path: "/Something else",
+      name: "User Profile",
+      icon: "nc-icon nc-circle-09",
+      component:'sss',
       layout: "/admin",
     },
   ];

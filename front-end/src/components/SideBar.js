@@ -16,9 +16,6 @@ function Sidebar({ color, image}) {
           backgroundImage: "url(" + image + ")",
         }}
       />
-
-    {console.log(dashboardRoutes)}
-
       <div className='side-bar wrapper'> 
 
       <div className="logo d-flex align-items-center justify-content-start">

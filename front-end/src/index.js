@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import './assets/css/index.css';
-import App from './App';
+import Admin from './layouts/Admin';
+import LandingPage from './views/LandingPage';
 import reportWebVitals from './reportWebVitals';
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -10,13 +11,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 
 ReactDOM.render(
-  <React.StrictMode>
     <BrowserRouter> 
-      
-      <App />
-    </BrowserRouter>
-
-  </React.StrictMode>,
+      <LandingPage />
+    </BrowserRouter>,
   document.getElementById('root')
 );
 
