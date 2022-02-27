@@ -12,7 +12,9 @@ export default function LandingPage() {
             <BrowserRouter> 
                 <Routes>
                         <Route path='admin/dashboard' element={<Dashboard />} />
-                        <Route path='/' element={<About />}/>    
+                        <Route path='/' element={<About />}/>
+                        <Route path='about' element={<About />}/>
+                             
                     
                 </Routes>
             </BrowserRouter>

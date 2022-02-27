@@ -59,6 +59,7 @@ function Header(){
                             key={page}
                             onClick={handleCloseNavMenu}
                             sx={{ my: 2, color: 'white', display: 'block' }}
+                            href={page}
                         >
                             {page}
                         </Button>
@@ -76,6 +77,7 @@ function Header(){
                         <Button
                             onClick={handleCloseNavMenu}
                             sx={{ my: 2, color: 'white', display: 'block' }}
+                            href='/admin/dashboard'
                         >
                             Dashboard
                         </Button>
