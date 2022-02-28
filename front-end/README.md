@@ -1,3 +1,7 @@
+# FOR DEVELOPERS: 
+  Before you begin, you must ensure you have Node.js installed. You can install it <a href='https://nodejs.org/en/'> from here </a>
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
