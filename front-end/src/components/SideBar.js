@@ -5,11 +5,12 @@ import Button from '@mui/material/Button'
 import { useLocation, NavLink } from "react-router-dom";
 import dashboardRoutes from '../routes.js'
 
-function Sidebar({ color, image}) {
+function Sidebar({ color, image, allowed}) {
   const location = useLocation();
   const activeRoute = (routeName) => {
     return location.pathname.indexOf(routeName) > -1 ? "active" : "";
   };
+
  return(
   <div className="side-bar" >
       <div
@@ -20,12 +21,6 @@ function Sidebar({ color, image}) {
       />
       <div className='side-bar wrapper'> 
 
-      <div className="logo d-flex align-items-center justify-content-start">
-            <div className="logo-img">
-            </div>
-            <p> LOGO </p>
-
-        </div>
           <Nav>
             {
               dashboardRoutes.map((prop, key) => {
@@ -37,6 +32,7 @@ function Sidebar({ color, image}) {
                     alignItems="flex-start"
                     key={key}
                   >
+                    <Button> 
                     <li
                     className={ activeRoute(prop.layout + prop.path)}
                   >
@@ -44,11 +40,13 @@ function Sidebar({ color, image}) {
                         to={prop.layout + prop.path}
                         className="nav-link"
                         activeclassname="active"
+
                       >
                         <i className={prop.icon} />
                         <p>{prop.name}</p>
                       </NavLink>
                     </li>
+                    </Button>
                     </Grid>
                   );
               })

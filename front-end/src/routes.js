@@ -1,4 +1,5 @@
-import Dashboard from "./views/Dashboard";
+import Dashboard from "./views/protected-views/Dashboard";
+import Devices from './views/protected-views/Devices';
 
 const dashboardRoutes = [
     {
@@ -12,7 +13,7 @@ const dashboardRoutes = [
       path: "/Devices",
       name: "Devices",
       icon: "nc-icon nc-bell-55",
-      component: 'sss',
+      component: Devices,
       layout: "/admin",
     },
     {

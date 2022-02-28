@@ -12,10 +12,11 @@ import Avatar from '@mui/material/Avatar'
 import Tooltip from '@mui/material/Tooltip'
 
 import '../assets/css/App.css'
+import { Link } from 'react-router-dom';
 
 function Header(){
     {/* pages: buttons to clock on*/}
-  const pages = ['About', 'Contact', 'Docemntation'];
+  const pages = ['About', 'Contact', 'Documentation'];
     {/* settings: options when you click on image*/}
   const settings = ['Profile', 'Logout']
 
@@ -39,7 +40,6 @@ function Header(){
 
     return(
         <> 
-        {console.log('header is here')}
         <AppBar className='header' position= 'sticky' style ={{background: '#cc0000'}}> 
             <Container>
                 <Toolbar>
@@ -49,7 +49,7 @@ function Header(){
                         component="div"
                         sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
                     >
-                    LOGO 
+                    {'<Logo here>'} 
                     </Typography>
                             
 
@@ -59,7 +59,7 @@ function Header(){
                             key={page}
                             onClick={handleCloseNavMenu}
                             sx={{ my: 2, color: 'white', display: 'block' }}
-                            href={page}
+                            href={'/'+page}
                         >
                             {page}
                         </Button>
