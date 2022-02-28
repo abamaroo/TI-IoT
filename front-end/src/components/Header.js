@@ -10,6 +10,7 @@ import IconButton from '@mui/material/IconButton';
 import MenuItem from '@mui/material/MenuItem'
 import Avatar from '@mui/material/Avatar'
 import Tooltip from '@mui/material/Tooltip'
+import LOGO from '../assets/imgs/game-cocks-logopng.png'
 
 import '../assets/css/App.css'
 import { Link } from 'react-router-dom';
@@ -49,7 +50,7 @@ function Header(){
                         component="div"
                         sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
                     >
-                    {'<Logo here>'} 
+                    <img src={LOGO} alt="Logo" width="100" height="80"/>
                     </Typography>
                             
 
