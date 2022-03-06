@@ -24,15 +24,15 @@ function Dashboard() {
             <div className="dashboard-content-body"> 
               <div>
                 <ReactSpeedometer
-                  segments={3}
-                  maxValue= {MAXIMUM_VALUE}
-                  value={current_data > MAXIMUM_VALUE ? MAXIMUM_VALUE : current_data}
-                  segmentColors={['#77DFF0', '#77F08C', '#F3441D']}
-                  needleColor="#000080"
-                  textColor='white'
-                  width={500}
-                  height={250}
-                />
+                      maxValue={MAXIMUM_VALUE}
+                      value={current_data > MAXIMUM_VALUE ? MAXIMUM_VALUE : current_data}
+                      needleColor="white"
+                      startColor="blue"
+                      segments={10}
+                      endColor="red"
+                      textColor="black"
+                      width={500}
+                    />
               </div>
 
               <div> 
