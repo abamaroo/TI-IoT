@@ -1,11 +1,21 @@
 # FOR DEVELOPERS: 
-  Before you begin, you must ensure you have Node.js installed. You can install it <a href='https://nodejs.org/en/'> from here </a>. 
+  Before you begin on front-end, you must ensure you have Node.js installed. You can install it <a href='https://nodejs.org/en/'> from here </a>. 
   
   Then, clone the repository in your desired path. After you clone it, you must install this project's dependencies. 
   You can do that by typing ``` npm install ``` inside the repository you just installed. 
   After you installed ran the above command, a node_modules folder should appear with all required dependencies.
   
   To launch the website on your local host, run the command ```npm start```. A page should launch in you browser.
+  ---------
+  To begin with backend, first install django using ```pip install django```. 
+  Next install dependencies using ```pip install -r requirments.txt``` 
+  To serve the front end using django, first run the build of the front end 
+      - This could be done by executing the custome script in bash terminal. run ``` npm run relocate```. 
+      the above will bundles everything the front-end needs as static files under folder 'build'. It will 
+      also move the build folder to the backend. 
+  Now that you have the 'build' folder under serverside folder, collect the static using ```python manage.py collectstatic``` 
+  Finally run the server using ```python manage.py runserver --nostatic``` 
+      - this will run the server on your localhost:8000, and serve static files with whitenoise instead of django's default
 
 # Getting Started with Create React App
 
