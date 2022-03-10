@@ -25,20 +25,26 @@ export default function LandingPage() {
                 <Routes>
                         {USERS.map( (user,key) => {
                             return(
-                                <>
+   
                                 <Route
                                  path={user.name+'/dashboard'} 
                                  element= {<Dashboard user={user.name}/>} 
-                                 key={key}
+                                 key = {user}
                                  />
-                                 <Route
-                                 path={user.name+'/devices'} 
-                                 element= {<Devices/>} 
-                                 key={key}
-                                 />
-                                </>
                                  )
                         }) }
+                        {USERS.map( (user,key) => {
+                            return(
+
+                                <Route
+                                 path={user.name+'/devices'} 
+                                 element= {<Devices/>} 
+                                 key = {user}
+                                 />
+                                 )
+                        }) }                    
+
+
                         <Route path='About' element={<About />}/>
                         <Route path='Contact' element={<Contact />}/>
                         <Route path='Documentation' element = {<Documentation />} />
