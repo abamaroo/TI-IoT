@@ -1,4 +1,5 @@
 import React from 'react'
+import { useState} from 'react'
 import AppBar from '@mui/material/AppBar';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
@@ -10,10 +11,10 @@ import IconButton from '@mui/material/IconButton';
 import MenuItem from '@mui/material/MenuItem'
 import Avatar from '@mui/material/Avatar'
 import Tooltip from '@mui/material/Tooltip'
-import LOGO from '../assets/imgs/game-cocks-logopng.png'
-
+import LOGO from '../assets/imgs/gamecocks.png'
+import LoginScreen from './LoginScreen';
 import '../assets/css/App.css'
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 function Header(){
     {/* pages: buttons to clock on*/}
@@ -39,9 +40,15 @@ function Header(){
     setAnchorElUser(null);
   };
 
+  const [loggedIn, setLoggedIn] = useState(false);
+  const handleLogin = () => {
+      
+  }
+
     return(
         <> 
         <AppBar className='header' position= 'sticky' style ={{background: '#cc0000'}}> 
+        {console.log(loggedIn)}
             <Container>
                 <Toolbar>
                     <Typography
@@ -75,13 +82,23 @@ function Header(){
                         opacity: [0.9, 0.8, 0.7],
                         },
                         } }> 
+                        { loggedIn ? 
                         <Button
                             onClick={handleCloseNavMenu}
                             sx={{ my: 2, color: 'white', display: 'block' }}
                             href='/admin/dashboard'
                         >
                             Dashboard
-                        </Button>
+                        </Button> : 
+
+                        <Button
+                        onClick={ handleLogin}
+                        sx={{ my: 2, color: 'white', display: 'block' }}
+                        href='/login'
+                    >
+                        Login
+                    </Button>   }
+                        
                     </Box>
 
                     <Box sx={{ flexGrow: 0 }}>

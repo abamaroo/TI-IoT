@@ -1,7 +1,10 @@
 import Dashboard from "./views/protected-views/Dashboard";
 import Devices from './views/protected-views/Devices';
+import USERS from './USERS.js'
+
 
 const dashboardRoutes = [
+  
     {
       path: "/dashboard",
       name: "Dashboard",

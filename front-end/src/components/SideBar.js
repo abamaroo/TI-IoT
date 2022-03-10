@@ -4,8 +4,10 @@ import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button'
 import { useLocation, NavLink } from "react-router-dom";
 import dashboardRoutes from '../routes.js'
+import USERS from '../USERS.js'
 
-function Sidebar({ color, image, allowed}) {
+
+function Sidebar({ color, image, user}) {
   const location = useLocation();
   const activeRoute = (routeName) => {
     return location.pathname.indexOf(routeName) > -1 ? "active" : "";

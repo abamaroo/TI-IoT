@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import './assets/css/index.css';
+import './assets/css/App.css'
 import Admin from './layouts/Admin';
 import LandingPage from './views/public-views/LandingPage';
 import reportWebVitals from './reportWebVitals';

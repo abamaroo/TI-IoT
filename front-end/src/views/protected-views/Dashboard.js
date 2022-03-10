@@ -4,7 +4,7 @@ import ReactSpeedometer from "react-d3-speedometer"
 import { Button } from "@mui/material";
 
 
-function Dashboard() {
+function Dashboard({user}) {
     const MAXIMUM_VALUE = 100
     const [current_data, setCurrentData] = useState(0)
     const Increment = () => {
@@ -13,7 +13,7 @@ function Dashboard() {
   return (
     <div className="dashboard-container">
         <div className="dashboard-sidebar"> 
-            <Sidebar />
+            <Sidebar user= {user}/>
         </div>
 
         <div className="dashboard-content"> 
