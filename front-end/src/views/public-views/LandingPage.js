@@ -35,7 +35,6 @@ export default function LandingPage() {
                         }) }
                         {USERS.map( (user,key) => {
                             return(
-
                                 <Route
                                  path={user.name+'/devices'} 
                                  element= {<Devices/>} 

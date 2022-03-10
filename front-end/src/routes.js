@@ -6,21 +6,21 @@ import USERS from './USERS.js'
 const dashboardRoutes = [
   
     {
-      path: "/dashboard",
+      path: "dashboard",
       name: "Dashboard",
       icon: "nc-icon nc-chart-pie-35",
       component: Dashboard,
       layout: "/admin",
     },
     {
-      path: "/Devices",
+      path: "devices",
       name: "Devices",
       icon: "nc-icon nc-bell-55",
       component: Devices,
       layout: "/admin",
     },
     {
-      path: "/Something else",
+      path: "something else",
       name: "Something ? ",
       icon: "nc-icon nc-circle-09",
       component:'sss',

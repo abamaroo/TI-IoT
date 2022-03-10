@@ -39,7 +39,7 @@ function Sidebar({ color, image, user}) {
                     className={ activeRoute(prop.layout + prop.path)}
                   >
                       <NavLink
-                        to={prop.layout + prop.path}
+                        to={location.pathname.replace(/[^/]*$/, prop.path)}
                         className="nav-link"
                         activeclassname="active"
 
