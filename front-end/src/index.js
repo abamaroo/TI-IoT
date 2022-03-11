@@ -1,15 +1,15 @@
+// react essentials
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
-import './assets/css/index.css';
-import './assets/css/App.css'
-import Admin from './layouts/Admin';
+
+//components
 import LandingPage from './views/public-views/LandingPage';
 import reportWebVitals from './reportWebVitals';
-import "@fortawesome/fontawesome-free/css/all.min.css";
+
+// Assets 
+import './assets/css/index.css';
+import './assets/css/App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
-
-
 
 ReactDOM.render(
   <React.StrictMode>

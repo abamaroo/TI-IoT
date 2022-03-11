@@ -15,7 +15,7 @@
 
 .dashboard-container .dashboard-content {
   display: grid;
-
+  
   grid-template-columns: 1fr 1fr 1fr 1fr ;
   grid-template-rows: 100px 100px 100px ;
   gap: 10px;
@@ -23,20 +23,20 @@
   padding-top: 1%;
   padding-left: 5%;
   padding-right: 5%;
-  background-color: #ececec;
+  
   width: 100vw;
 
 }
 
 
 .dashboard-container .dashboard-content .dashboard-content-title {
-  background-color: #dedede;
+  
   grid-column: 1 / 5;
   grid-row: 1;
 }
 
 .dashboard-container .dashboard-content .dashboard-content-body {
-  background-color: #dedede;
+  
   padding-top: 5%;
   grid-column: 2 / 4;
   grid-row: 2 / 5;
@@ -47,7 +47,7 @@
 }
 
 .dashboard-container .dashboard-content .dashboard-content-body-devices {
-  background-color: #dedede;
+  
   grid-column: 1 / 4;
   grid-row: 2 / 5;
   display: flex;

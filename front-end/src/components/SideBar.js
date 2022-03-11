@@ -7,6 +7,7 @@ import dashboardRoutes from '../routes.js'
 import USERS from '../USERS.js'
 
 
+
 function Sidebar({ color, image, user}) {
   const location = useLocation();
   const activeRoute = (routeName) => {

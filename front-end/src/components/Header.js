@@ -1,5 +1,8 @@
+// React essentials
 import React from 'react'
 import { useState} from 'react'
+
+// Material UI (Library used for themeing )
 import AppBar from '@mui/material/AppBar';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
@@ -11,13 +14,13 @@ import IconButton from '@mui/material/IconButton';
 import MenuItem from '@mui/material/MenuItem'
 import Avatar from '@mui/material/Avatar'
 import Tooltip from '@mui/material/Tooltip'
+
+// Assets
 import LOGO from '../assets/imgs/gamecocks.png'
-import LoginScreen from './LoginScreen';
-import '../assets/css/App.css'
-import { Link, Redirect } from 'react-router-dom';
+
 
 function Header(){
-    {/* pages: buttons to clock on*/}
+    {/* public pages that don't need user log in */}
   const pages = ['About', 'Contact', 'Documentation'];
     {/* settings: options when you click on image*/}
   const settings = ['Profile', 'Logout']
@@ -47,33 +50,43 @@ function Header(){
 
     return(
         <> 
+        {/* Bar on the top of the screen */}
         <AppBar className='header' position= 'sticky' style ={{background: '#cc0000'}}> 
-        {console.log(loggedIn)}
+            
             <Container>
+
                 <Toolbar>
+                    
                     <Typography
                         variant="h6"
                         noWrap
                         component="div"
                         sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
-                    >
-                    <img src={LOGO} alt="Logo" width="100" height="80"/>
+                    >   
+                        {/* Insert the logo here */}
+                        <img src={LOGO} alt="Logo" width="100" height="80"/>
+
                     </Typography>
                             
-
+                    {/* This box is used for the public pages section*/}
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+                        {/* this iterates through the pages array and insert a buttons for each */}
                         {pages.map((page) => (
-                        <Button
-                            key={page}
-                            onClick={handleCloseNavMenu}
-                            sx={{ my: 2, color: 'white', display: 'block' }}
-                            href={'/'+page}
-                        >
-                            {page}
-                        </Button>
+
+                            <Button
+                                key={page}
+                                onClick={handleCloseNavMenu}
+                                sx={{ my: 2, color: 'white', display: 'block' }}
+                                href={'/'+page}
+                            >
+                                {page}
+                            </Button>
+
                         ))}
+
                     </Box>
 
+                    {/* This is the Login/dashboard section on the right */}
                     <Box 
                     sx={{ flexGrow: 0, 
                     display: { xs: 'none', md: 'flex' }, 
@@ -82,6 +95,8 @@ function Header(){
                         opacity: [0.9, 0.8, 0.7],
                         },
                         } }> 
+
+                        {/* if loggedIs true, display dashboard, else display login */}
                         { loggedIn ? 
                         <Button
                             onClick={handleCloseNavMenu}
@@ -89,49 +104,60 @@ function Header(){
                             href='/admin/dashboard'
                         >
                             Dashboard
-                        </Button> : 
+                        </Button> 
+
+                        :
 
                         <Button
                         onClick={ handleLogin}
                         sx={{ my: 2, color: 'white', display: 'block' }}
                         href='/login'
-                    >
-                        Login
-                    </Button>   }
+                        >
+                            Login
+                        </Button>   
+                        }
                         
                     </Box>
 
+                        {/* this box is for the image 'avatar' next to the above button */}
                     <Box sx={{ flexGrow: 0 }}>
                         <Tooltip title="Open settings">
-                        <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                            <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-                        </IconButton>
+                            <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                                <Avatar alt="Remy Sharp" 
+                                        src="/static/images/avatar/2.jpg" 
+                                />
+                            </IconButton>
+                            
                         </Tooltip>
-                        <Menu
-                        sx={{ mt: '45px' }}
-                        id="menu-appbar"
-                        anchorEl={anchorElUser}
-                        anchorOrigin={{
-                            vertical: 'top',
-                            horizontal: 'right',
-                        }}
-                        keepMounted
-                        transformOrigin={{
-                            vertical: 'top',
-                            horizontal: 'right',
-                        }}
-                        open={Boolean(anchorElUser)}
-                        onClose={handleCloseUserMenu}
-                        >
-                        {settings.map((setting) => (
-                            <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                            <Typography textAlign="center">{setting}</Typography>
-                            </MenuItem>
-                        ))}
-                        </Menu>
+                            <Menu
+                            sx={{ mt: '45px' }}
+                            id="menu-appbar"
+                            anchorEl={anchorElUser}
+                            anchorOrigin={{
+                                vertical: 'top',
+                                horizontal: 'right',
+                            }}
+                            keepMounted
+                            transformOrigin={{
+                                vertical: 'top',
+                                horizontal: 'right',
+                            }}
+                            open={Boolean(anchorElUser)}
+                            onClose={handleCloseUserMenu}
+                            >
+                            {settings.map((setting) => (
+                                <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                                <Typography textAlign="center">{setting}</Typography>
+                                </MenuItem>
+                            ))}
+                            </Menu>
+
                     </Box>
+
                 </Toolbar>
+
             </Container>
+
         </AppBar>
         </>
     );

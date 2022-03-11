@@ -1,7 +1,8 @@
-import { React, useState } from "react";
-import Sidebar from "../../components/SideBar";
+import { React, useState, useEffect } from "react";
+import SideBar from "../../components/SideBar";
 import ReactSpeedometer from "react-d3-speedometer"
 import { Button } from "@mui/material";
+import axios from 'axios'
 
 
 function Dashboard({user}) {
@@ -10,10 +11,19 @@ function Dashboard({user}) {
     const Increment = () => {
       setCurrentData(current_data+1)
     }
+    
+    // TODO Test an API 
+    useEffect( () => {
+      
+      axios.get("https://jsonplaceholder.typicode.com/posts")
+      .then( (response) => { /*console.log(response.data)*/})  
+      }
+    )
+
   return (
     <div className="dashboard-container">
         <div className="dashboard-sidebar"> 
-            <Sidebar user= {user}/>
+            <SideBar user= {user}/>
         </div>
 
         <div className="dashboard-content"> 
@@ -26,7 +36,7 @@ function Dashboard({user}) {
                 <ReactSpeedometer
                       maxValue={MAXIMUM_VALUE}
                       value={current_data > MAXIMUM_VALUE ? MAXIMUM_VALUE : current_data}
-                      needleColor="white"
+                      needleColor="black"
                       startColor="blue"
                       segments={10}
                       endColor="red"

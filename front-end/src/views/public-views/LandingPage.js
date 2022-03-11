@@ -1,3 +1,6 @@
+import React from "react"
+import SideBar from '../../components/SideBar';
+
 import Header from "../../components/Header"
 import Dashboard from "../protected-views/Dashboard"
 import About from "./About"
@@ -9,16 +12,9 @@ import LoginScreen from "../../components/LoginScreen"
 import USERS from '../../USERS'
 
 export default function LandingPage() {
-    const _pages = ['About', 'Contact', 'Docs'];
-    const getRoutes = (pages) => {
-        pages.map( (page) => {
-            return page
-        } )
-    };
+
     return(
-        
         <>
-        
             <Header/>
             <BrowserRouter> 
             
@@ -43,22 +39,11 @@ export default function LandingPage() {
                                  )
                         }) }                    
 
-
+                        <Route path='/' exact element={<About />}/>
                         <Route path='About' element={<About />}/>
                         <Route path='Contact' element={<Contact />}/>
                         <Route path='Documentation' element = {<Documentation />} />
                         <Route path='login' element={<LoginScreen/>} />
-                            {/* remove soon */}
-                                 <Route
-                                 path='admin/dashboard'
-                                 element= {<Dashboard/>} 
-                                 
-                                 />
-                                 <Route
-                                 path='admin/devices'
-                                 element= {<Devices/>} 
-                                 
-                                 />
 
                 </Routes>
             </BrowserRouter>
