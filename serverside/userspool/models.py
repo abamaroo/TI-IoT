@@ -29,8 +29,16 @@ class RegisteredDevices(models.Model):
     Each user will have a set of devices under it 
     '''
     device_name = models.CharField(max_length=200) 
-    owner_name = models.ForeignKey(Userpool, on_delete=models.CASCADE)
+    owner_name = models.ForeignKey(Userpool, on_delete=models.CASCADE, related_name= 'devices')
 
     def __str__(self):
         return_value = str(f"Device: '{self.device_name}' owned by: '{self.owner_name}'")
         return (return_value)
+
+
+class Dataset(models.Model):
+    data = models.FloatField(blank=False)
+    to_device = models.ForeignKey(RegisteredDevices, on_delete=models.CASCADE,related_name='dataset')
+    creation_date = models.DateTimeField(auto_now_add=True)
+    def __str__(self):
+        return str(self.to_device)

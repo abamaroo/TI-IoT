@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from userspool.models import Userpool, RegisteredDevices
+from userspool.models import *
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -9,4 +9,9 @@ class UserSerializer(serializers.ModelSerializer):
 class DevicesSerializer(serializers.ModelSerializer):
     class Meta:
         model = RegisteredDevices
+        fields = '__all__'
+
+class DataSetSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Dataset
         fields = '__all__'

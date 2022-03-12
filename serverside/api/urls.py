@@ -14,5 +14,6 @@ urlpatterns = [
     path('test/', sanity_checker, name='api test'),
     path('get-username/', views.get_username, name="User Name"),
     path('get-devices/', views.get_devices, name="Devices list"),
-    path('get-data/', views.get_data, name="Data pool")
+    path('<str:device_name>/get-data/', views.get_data, name="Recent data"),
+    path('<str:device_name>/get-all-data/', views.get_all_data, name="All data")
 ]

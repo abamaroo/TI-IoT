@@ -17,9 +17,15 @@ function Dashboard({user}) {
     //   or 
     //  'localhost:8000'/<user>/api/data
     useEffect( () => {
-      
+
       axios.get("http://localhost:8000/Alawfi/api/get-username/")
       .then( (response) => { console.log(response.data.username)})  
+      }
+    )
+    useEffect( () => {
+                             // The API link now needs to specify which device
+      axios.get("http://localhost:8000/Alawfi/api/alawfimcu/get-data/")
+      .then( (response) => { console.log(response.data.data)})  
       }
     )
 
