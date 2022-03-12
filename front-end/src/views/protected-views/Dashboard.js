@@ -18,8 +18,8 @@ function Dashboard({user}) {
     //  'localhost:8000'/<user>/api/data
     useEffect( () => {
       
-      axios.get("https://jsonplaceholder.typicode.com/posts")
-      .then( (response) => { /*console.log(response.data)*/})  
+      axios.get("http://localhost:8000/Alawfi/api/get-data/")
+      .then( (response) => { console.log(response.data)})  
       }
     )
 

@@ -23,7 +23,7 @@ def render_index(request):
 urlpatterns = [
     
     path('admin/', admin.site.urls),
-    path('api/', include('api.urls') ),
+    path('<str:user_name>/api/', include('api.urls') ),
     re_path(r"^$", render_index),
     re_path(r"^(?:.*)/?$", render_index),
 ]
