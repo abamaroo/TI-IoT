@@ -18,8 +18,8 @@ function Dashboard({user}) {
     //  'localhost:8000'/<user>/api/data
     useEffect( () => {
       
-      axios.get("www.ti-fi-uofsc.com/Alawfi/api/get-username/")
-      .then( (response) => { console.log(response.data)})  
+      axios.get("http://localhost:8000/Alawfi/api/get-username/")
+      .then( (response) => { console.log(response.data.username)})  
       }
     )
 

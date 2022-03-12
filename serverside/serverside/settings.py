@@ -30,7 +30,7 @@ DEBUG = True
 # DEBUG = False
 
 # Development
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost:8000', 'localhost:3000', 'localhost']
 
 # Production 
 # ALLOWED_HOSTS = ['localhost:8000', 'www.ti-fi-uofsc.com', 'ti-fi-uofsc.com']
