@@ -26,8 +26,14 @@ SECRET_KEY = 'django-insecure-@*7cw#1h0@@u)s+%16cw0lo=$$65$ro-1u0f%5ckzqth=!f_dd
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# In production, uncomment the line below, and comment the line above
+# DEBUG = False
+
+# Development
 ALLOWED_HOSTS = []
 
+# Production 
+# ALLOWED_HOSTS = ['localhost:8000', 'www.ti-fi-uofsc.com', 'ti-fi-uofsc.com']
 
 # Application definition
 
@@ -38,6 +44,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'userspool',
+    'api', 
+    'rest_framework',
 ]
 
 MIDDLEWARE = [

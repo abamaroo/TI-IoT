@@ -21,7 +21,9 @@ def render_index(request):
     return render(request, "index.html")
 
 urlpatterns = [
-    path('superuser/', admin.site.urls),
+    
+    path('admin/', admin.site.urls),
+    path('api/', include('api.urls') ),
     re_path(r"^$", render_index),
     re_path(r"^(?:.*)/?$", render_index),
 ]

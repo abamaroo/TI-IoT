@@ -12,7 +12,10 @@ function Dashboard({user}) {
       setCurrentData(current_data+1)
     }
     
-    // TODO Test an API 
+    // TODO Test djnago API. Can you get from: 
+    //  'http://www.ti-fi-uofsc.com/<user>/api/data' ? 
+    //   or 
+    //  'localhost:8000'/<user>/api/data
     useEffect( () => {
       
       axios.get("https://jsonplaceholder.typicode.com/posts")
