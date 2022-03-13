@@ -4,6 +4,8 @@ from django.shortcuts import render
 # api stuff
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
+from rest_framework import status
+from rest_framework.parsers import JSONParser
 
 from userspool.models import Userpool
 from .serializers import *
@@ -41,3 +43,14 @@ def get_all_data(request, user_name, device_name):
     return Response( serialized.data)
 
 # TODO post some
+@api_view(['POST'])
+def post_data(request, user_name, device_name):
+    _user = Userpool.objects.filter(username__startswith=user_name).get()
+
+    #to_be_saved = {"data":str(request.data),"to_device":str(device_name)}
+
+    serializer = DataPostSetSerializer(data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
+    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

@@ -8,26 +8,47 @@ import axios from 'axios'
 function Dashboard({user}) {
     const MAXIMUM_VALUE = 100
     const [current_data, setCurrentData] = useState(0)
+    const [current_user, setCurrentUser] = useState('')
     const Increment = () => {
       setCurrentData(current_data+1)
     }
     
-    // TODO Test djnago API. Can you get from: 
-    //  'http://www.ti-fi-uofsc.com/<user>/api/data' ? 
-    //   or 
-    //  'localhost:8000'/<user>/api/data
-    useEffect( () => {
+    // Collects data about who is currently logged in
+    const base_URL = window.location.href
+    const base_URL_clear = base_URL.replace("/dashboard", "")
+    let last_index_of_slash = base_URL_clear.lastIndexOf("/")
+    const current_user_const = (base_URL_clear.substring(last_index_of_slash+1, base_URL_clear.length))
+    const [current_device, setDevice] = useState('')
 
-      axios.get("http://localhost:8000/Alawfi/api/get-username/")
-      .then( (response) => { console.log(response.data.username)})  
+    // fetch the current device 
+    useEffect( () => {  
+      axios.get(`http://localhost:8000/${current_user_const}/api/get-devices/`)
+      .then( (response) => { 
+        setDevice(response.data[0].device_name)
+        
+      })  
       }
     )
-    useEffect( () => {
+
+      // Update our data every 5 seconds
+    const [seconds, setSeconds] = useState(0)
+ useEffect( () => {
                              // The API link now needs to specify which device
-      axios.get("http://localhost:8000/Alawfi/api/alawfimcu/get-data/")
-      .then( (response) => { console.log(response.data.data)})  
+                                          
+      const interval = window.setInterval(() => {
+        setSeconds(seconds => seconds + 1);
+      }, 5000);
+      
+      axios.get(`http://localhost:8000/${current_user_const}/api/${current_device}/get-data/`)
+      .then( (response) => { 
+        console.log(response.data.data)
+        setCurrentData(response.data.data)
+      })  
+
+      return () => clearInterval(interval);
+
       }
-    )
+    ) 
 
   return (
     <div className="dashboard-container">

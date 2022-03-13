@@ -4,6 +4,8 @@ import { Button } from "@mui/material";
 
 export default function LoginScreen(){ 
     
+
+
     {/* this is the value of the dropdown menu*/}
     const [value, setValue] = useState(USERS[0].name);
     {/* this is the user that was selected from the dropdown menue*/}
@@ -14,9 +16,7 @@ export default function LoginScreen(){
         setValue(event.target.value);
       };
     {/* TODO: Make the selected user a global state */}
-    const handleLogin = () => {
-        setSelectedUser(value)
-    }
+
 
     return (
         

@@ -15,3 +15,7 @@ class DataSetSerializer(serializers.ModelSerializer):
     class Meta:
         model = Dataset
         fields = '__all__'
+class DataPostSetSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Dataset
+        fields = ['data']
