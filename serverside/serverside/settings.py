@@ -50,7 +50,7 @@ INSTALLED_APPS = [
     'corsheaders',
 ]
 
-
+# comment out when in server environment
 CORS_ORIGIN_ALLOW_ALL = True
 
 MIDDLEWARE = [
@@ -58,8 +58,6 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
-
-
 
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',

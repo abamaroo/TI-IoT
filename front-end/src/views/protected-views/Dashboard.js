@@ -22,6 +22,7 @@ function Dashboard({user}) {
 
     // fetch the current device 
     useEffect( () => {  
+      // at server environemnt, use http://www.ti-fi-uofsc.com/${current_user_const}/api/get-devices/
       axios.get(`http://localhost:8000/${current_user_const}/api/get-devices/`)
       .then( (response) => { 
         setDevice(response.data[0].device_name)
@@ -39,6 +40,7 @@ function Dashboard({user}) {
         setSeconds(seconds => seconds + 1);
       }, 5000);
       
+      // at server env use http://www.ti-fi-uofsc.com/${current_user_const}/api/${current_device}/get-data/`
       axios.get(`http://localhost:8000/${current_user_const}/api/${current_device}/get-data/`)
       .then( (response) => { 
         console.log(response.data.data)
