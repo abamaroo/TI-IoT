@@ -18,4 +18,4 @@ class DataSetSerializer(serializers.ModelSerializer):
 class DataPostSetSerializer(serializers.ModelSerializer):
     class Meta:
         model = Dataset
-        fields = ['data']
+        fields = ['data','to_device']

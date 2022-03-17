@@ -20,7 +20,6 @@ def get_username(request, user_name):
 # based on a given user, get their devices
 @api_view(['GET'])
 def get_devices(request, user_name):
-   
     _user = Userpool.objects.filter(username__startswith=user_name).get()
     _devices = _user.devices.all()
     serialized = DevicesSerializer(_devices, many=True)
@@ -29,6 +28,7 @@ def get_devices(request, user_name):
 # based on the user, return their most recent data
 @api_view(['GET'])
 def get_data(request, user_name, device_name):
+    device_name = device_name.lower()
     _user = Userpool.objects.filter(username__startswith=user_name).get()
     data = _user.devices.get(device_name = device_name).dataset.last()
     serialized = DataSetSerializer(data, many=False)
@@ -37,6 +37,7 @@ def get_data(request, user_name, device_name):
 # based on the user, return all their data
 @api_view(['GET'])
 def get_all_data(request, user_name, device_name):
+    device_name = device_name.lower()
     _user = Userpool.objects.filter(username__startswith=user_name).get()
     data = _user.devices.get(device_name = device_name).dataset.all()
     serialized = DataSetSerializer(data, many=True)
@@ -45,11 +46,15 @@ def get_all_data(request, user_name, device_name):
 # TODO post some
 @api_view(['POST'])
 def post_data(request, user_name, device_name):
-    _user = Userpool.objects.filter(username__startswith=user_name).get()
+    device_name = device_name.lower()
+    # find the pk of the device
+    requested_device = RegisteredDevices.objects.get(device_name = device_name).pk
 
-    #to_be_saved = {"data":str(request.data),"to_device":str(device_name)}
+    # Re-arrange so that the input can be the data value only
+    parsed_data = {'data':request.data['data'], 'to_device':requested_device}
 
-    serializer = DataPostSetSerializer(data=request.data)
+    serializer = DataPostSetSerializer(data=parsed_data)
+    
     if serializer.is_valid():
         serializer.save()
         return Response(serializer.data, status=status.HTTP_201_CREATED)
