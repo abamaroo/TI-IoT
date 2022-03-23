@@ -1,13 +1,21 @@
+// react essentials
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+
+//components
+import LandingPage from './views/public-views/LandingPage';
 import reportWebVitals from './reportWebVitals';
+
+// Assets 
+import './assets/css/index.css';
+import './assets/css/App.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    
+        <LandingPage />
+    </React.StrictMode>,
   document.getElementById('root')
 );
 
